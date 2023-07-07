@@ -2,18 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Яндекс.Дом</title>
-    <script src="vendors/react-with-dom.js"></script>
-    <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+  <div id="app"></div>
 
-<div id="app"></div>
-
-<footer class="footer">
+  <footer class="footer">
     <ul class="footer__list">
         <li class="footer__item">
             <a class="footer__link" href="/">Помощь</a>
@@ -32,10 +28,11 @@
     <div class="footer__copyright">
         © 1997–2023 ООО «Яндекс»
     </div>
-</footer>
+  </footer>
 
-<script src="vendors/babel.min.js"></script>
-<script type="text/babel">
+  <script defer src="vendors/babel.min.js"></script>
+  <script defer src="vendors/react-with-dom.js"></script>
+  <script defer type="text/babel">
     function Header() {
         let [expanded, setExpanded] = React.useState(false);
         let [toggled, setToggled] = React.useState(false);
@@ -392,16 +389,13 @@
         </main>;
     }
 
-    setTimeout(() => {
-        const root = ReactDOM.createRoot(document.getElementById('app'));
-        root.render(
-            <>
-                <Header />
-                <Main />
-            </>
-        );
-    }, 100);
-</script>
-
+    const root = ReactDOM.createRoot(document.getElementById('app'));
+    root.render(
+        <>
+            <Header />
+            <Main />
+        </>
+    );
+  </script>
 </body>
 </html>
